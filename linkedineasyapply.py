@@ -1,10 +1,15 @@
-import time, random, csv, pyautogui, pdb, traceback, sys
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
+import csv
+import pyautogui
+import random
+import time
+import traceback
 from datetime import date
 from itertools import product
+
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 
 
 class LinkedinEasyApply:
