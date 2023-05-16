@@ -1,0 +1,136 @@
+email: kairavpatel97@csu.fullerton.edu
+password: KmPatel@8575
+
+disableAntiLock: False
+
+remote: False
+
+experienceLevel:
+ internship: False
+ entry: True
+ associate: False
+ mid-senior level: False
+ director: False
+ executive: False
+
+jobTypes:
+ full-time: True
+ contract: False
+ part-time: False
+ temporary: False
+ internship: False
+ other: False
+ volunteer: False
+
+date:
+ all time: False
+ month: False
+ week: False
+ 24 hours: True
+
+positions:
+ - Software Engineer
+ #- ...
+locations:
+ - California
+ #- A second location
+ #- A third location
+ #- ...
+# - Remote
+distance: 100
+
+outputFileDirectory: ~/Documents/Applications/EasyApplyBot/EasyApplyBot/
+
+companyBlacklist:
+ - CyberCoders
+ #- company
+ #- company2
+
+titleBlacklist:
+ #- word1
+ #- word2
+
+posterBlacklist:
+ #- name1
+ #- name2
+
+uploads:
+ resume: ./KairavPatel-Resume.pdf
+ # Cover letter is optional
+ #coverLetter: C:\Users\myDirectory\CoverLettter.pdf
+
+
+# ------------ QA section -------------------
+
+# ------------ Additional parameters: checkboxes ---------------
+checkboxes:
+ # Do you have a valid driver's license? (yes/no checkbox)
+ driversLicence: True
+ # Will you now, or in the future, require sponsorship for employment visa status (e.g. H-1B visa status)? (yes/no checkbox)
+ # This is relative to the location and your citizenship applying above, and same with legallyAuthorized.
+ requireVisa: True
+ # Are you legally authorized to work in COUNTRY? (yes/no checkbox)
+ legallyAuthorized: True
+ # We must fill this position urgently. Can you start immediately? (yes/no checkbox)
+ urgentFill: True
+ # Are you comfortable commuting to this job's location? (yes/no checkbox)
+ commute: True
+ # Are you comfortable working in a remote environment? (yes/no checkbox)
+ remote: True
+ # Are you comfortable taking a drug in accordance with local/state laws? (yes/no checkbox)
+ drugTest: True
+ # Are you willing to complete an assessment? (yes/no checkbox)
+ assessment: True
+ # Have you completed the following level of education: DEGREE TYPE? (yes/no checkbox)
+ degreeCompleted:
+  - High School Diploma
+  - Bachelor's Degree
+  # - Associate's Degree
+  - Master's Degree
+  # - Master of Business Administration
+  # - Doctor of Philosophy
+  # - Doctor of Medicine
+  # - Doctor of Law
+ # Are you willing to undergo a background check, in accordance with local law/regulations?
+ backgroundCheck: True
+
+# ------------ Additional parameters: universityGpa ---------------
+universityGpa: 3.76
+
+# ------------ Additional parameters: salaryMinimum ---------------
+salaryMinimum: 100000
+
+# ------------ Additional parameters: languages ---------------
+languages:
+ english: Conversational # None, Conversational, Professional, Native or bilingual
+
+# ------------ Additional parameters: years of experience ---------------
+# How many years of work experience do you have ...? (whole numbers only)
+experience:
+ # normal ones
+ #python: 0
+ #selenium: 0
+ # default to put for any industry/skill that you did not list
+ default: 4
+
+# ------------ Additional parameters: personal info ---------------
+personalInfo:
+ First Name: Kairav
+ Last Name: Patel
+ Phone Country Code: United States (+1) # See linkedin for your country code, must be exact according to the international platform, i.e. Italy (+39) not Italia (+39)
+ Mobile Phone Number: +14089048575
+ Street address: 1100 N Placentia Ave E28
+ City: Fullerton # Include the state/province as well!
+ State: California
+ Zip: 92831
+ Linkedin: https://www.linkedin.com/in/kairavpatel/
+#  Website: https://www.my-website.com # github/website is interchangeable here
+
+# ------------ Additional parameters: USA employment crap ---------------
+eeo:
+ gender: Male
+ race: Asian
+ vetran: no
+ disability: No, I Don’t Have A Disability, Or A History/Record Of Having A Disability
+ citizenship: no
+ clearance: no
