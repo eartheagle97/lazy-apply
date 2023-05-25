@@ -1,15 +1,10 @@
-import csv
-import pyautogui
-import random
-import time
-import traceback
+import time, random, csv, pyautogui, pdb, traceback, sys
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 from datetime import date
 from itertools import product
-
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
 
 
 class LinkedinEasyApply:
@@ -325,17 +320,24 @@ class LinkedinEasyApply:
                     radio_text = el.text.lower()
                     radio_options = [text.text.lower() for text in radios]
                     answer = "yes"
+                    print("radio_text", radio_text)
+                    print("radio_options", radio_options)
 
                     if 'driver\'s licence' in radio_text or 'driver\'s license' in radio_text:
                         answer = self.get_answer('driversLicence')
-                    elif 'gender' in radio_text or 'veteran' in radio_text or 'race' in radio_text or 'disability' in radio_text or 'latino' in radio_text:
+
+                    elif 'male' in radio_text or 'veteran' in radio_text or 'race' in radio_text or 'disability' in radio_text or 'latino' in radio_text:
+                        print("if ni ander nu radio_text = ", radio_text)
                         answer = ""
                         for option in radio_options:
-                            if 'prefer' in option.lower() or 'decline' in option.lower() or 'don\'t' in option.lower() or 'specified' in option.lower() or 'none' in option.lower():
+                            if 'male' in option.lower():
+                                answer = radio_options['Male']
+                            if 'not a protected' in option.lower() or 'don\'t have a disability' in option.lower() or 'asian' in option.lower() or 'none' in option.lower():
                                 answer = option
-
+                        print("ForLoop pachi ans = ", answer)
                         if answer == "":
                             answer = radio_options[len(radio_options) - 1]
+                        print("End ma kai na madyu aetle ans = ", answer)
                     elif 'assessment' in radio_text:
                         answer = self.get_answer("assessment")
                     elif 'north korea' in radio_text:
@@ -346,7 +348,7 @@ class LinkedinEasyApply:
                         answer = self.get_answer('legallyAuthorized')
                     elif 'urgent' in radio_text:
                         answer = self.get_answer('urgentFill')
-                    elif 'commut' in radio_text:
+                    elif 'commute' in radio_text:
                         answer = self.get_answer('commute')
                     elif 'remote' in radio_text:
                         answer = self.get_answer('remote')
@@ -610,12 +612,12 @@ class LinkedinEasyApply:
                             choice = options[len(options) - 1]
 
                         self.select_dropdown(dropdown_field, choice)
-                    elif 'gender' in question_text or 'veteran' in question_text or 'race' in question_text or 'disability' in question_text or 'latino' in question_text:
-
+                    elif 'male' in question_text or 'veteran' in question_text or 'race' in question_text or 'disability' in question_text or 'latino' in question_text:
                         choice = ""
-
                         for option in options:
-                            if 'prefer' in option.lower() or 'decline' in option.lower() or 'don\'t' in option.lower() or 'specified' in option.lower() or 'none' in option.lower():
+                            if 'male' in option.lower():
+                                choice = option['Male']
+                            if 'not a protected' in option.lower() or 'don\'t have a disability' in option.lower() or 'asian' in option.lower() or 'none' in option.lower():
                                 choice = option
 
                         if choice == "":
@@ -836,12 +838,13 @@ class LinkedinEasyApply:
 
         easy_apply_url = "&f_LF=f_AL"
 
-        extra_search_terms = [distance_url, remote_url, job_types_url, experience_url]
+        extra_search_terms = [remote_url, job_types_url, experience_url]
         extra_search_terms_str = '&'.join(term for term in extra_search_terms if len(term) > 0) + easy_apply_url + date_url
 
         return extra_search_terms_str
 
     def next_job_page(self, position, location, job_page):
+
         self.browser.get("https://www.linkedin.com/jobs/search/" + self.base_search_url +
                          "&keywords=" + position + location + "&start=" + str(job_page*25))
 

@@ -3,10 +3,3 @@ pyautogui
 webdriver_manager
 PyYAML
 validate_email
-csv
-pyautogui
-random
-time
-traceback
-datetime
-itertools

@@ -25,11 +25,18 @@ jobTypes:
 date:
  all time: False
  month: False
- week: False
- 24 hours: True
+ week: True
+ 24 hours: False
 
 positions:
  - Software Engineer
+ - Full-Stack Developer
+ - Web Developer
+ - Front-End Developer
+ - Back-end Software Engineer
+ - Back End Developer
+ - Software Developer
+ - SQL Developer
  #- ...
 locations:
  - California
@@ -37,12 +44,13 @@ locations:
  #- A third location
  #- ...
 # - Remote
-distance: 100
+distance: 0
 
 outputFileDirectory: ~/Documents/Applications/EasyApplyBot/EasyApplyBot/
 
 companyBlacklist:
  - CyberCoders
+ - Braintrust
  #- company
  #- company2
 
@@ -94,6 +102,8 @@ checkboxes:
  # Are you willing to undergo a background check, in accordance with local law/regulations?
  backgroundCheck: True
 
+ relocate: True
+
 # ------------ Additional parameters: universityGpa ---------------
 universityGpa: 3.76
 
@@ -108,7 +118,13 @@ languages:
 # How many years of work experience do you have ...? (whole numbers only)
 experience:
  # normal ones
- #python: 0
+ python: 4
+ fullStack: 4
+ react: 4
+ node.js: 4
+ php : 5
+ Javascript: 5
+
  #selenium: 0
  # default to put for any industry/skill that you did not list
  default: 4
@@ -118,19 +134,19 @@ personalInfo:
  First Name: Kairav
  Last Name: Patel
  Phone Country Code: United States (+1) # See linkedin for your country code, must be exact according to the international platform, i.e. Italy (+39) not Italia (+39)
- Mobile Phone Number: +14089048575
+ Mobile Phone Number: 14089048575
  Street address: 1100 N Placentia Ave E28
  City: Fullerton # Include the state/province as well!
  State: California
  Zip: 92831
  Linkedin: https://www.linkedin.com/in/kairavpatel/
-#  Website: https://www.my-website.com # github/website is interchangeable here
+ Website: https://github.com/eartheagle97
 
 # ------------ Additional parameters: USA employment crap ---------------
 eeo:
  gender: Male
  race: Asian
- vetran: no
+ vetran: I am not a protected veteran
  disability: No, I Don’t Have A Disability, Or A History/Record Of Having A Disability
  citizenship: no
  clearance: no
